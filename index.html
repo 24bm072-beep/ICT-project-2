@@ -1,1 +1,154 @@
-h
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Social Engineering: What It Is & How to Stay Safe</title>
+  <meta name="description" content="A one-page site explaining social engineering, common tactics, real-world examples, warning signs, and practical defenses." />
+  <style>
+    :root{
+      --bg:#0f172a;        /* slate-900 */
+      --card:#111827;      /* gray-900 */
+      --text:#e5e7eb;      /* gray-200 */
+      --muted:#94a3b8;     /* slate-400 */
+      --accent:#38bdf8;    /* sky-400 */
+      --accent-2:#22c55e;  /* green-500 */
+      --warn:#f59e0b;      /* amber-500 */
+      --danger:#ef4444;    /* red-500 */
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;background:linear-gradient(180deg,#0b1220,#0f172a);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;}
+    a{color:var(--accent);text-decoration:none}
+    a:hover{text-decoration:underline}
+    header{padding:56px 20px 24px;border-bottom:1px solid rgba(255,255,255,.08);background:radial-gradient(1200px 400px at 50% -100px, rgba(56,189,248,.25), transparent),
+            radial-gradient(800px 300px at 80% -120px, rgba(34,197,94,.20), transparent);}    
+    .container{max-width:980px;margin:0 auto;padding:0 20px}
+    .title{font-size:clamp(28px,6vw,44px);line-height:1.1;margin:0 0 12px;font-weight:800;letter-spacing:.2px}
+    .subtitle{color:var(--muted);font-size:clamp(16px,2.5vw,20px);margin:0}
+    .cta{margin-top:20px;display:flex;gap:12px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:10px;border:1px solid rgba(255,255,255,.12);background:#0b1220;color:var(--text);font-weight:600}
+    .btn.primary{background:linear-gradient(90deg,var(--accent),#8b5cf6);border:none}
+    .btn:hover{filter:brightness(1.08)}
+
+    main{padding:28px 0 60px}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+    .card{grid-column:span 12;background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:18px 18px}
+    @media (min-width: 820px){
+      .card.span-6{grid-column:span 6}
+      .card.span-4{grid-column:span 4}
+    }
+    h2{margin:6px 0 10px;font-size:22px}
+    h3{margin:10px 0 6px;font-size:18px}
+    p,li{color:#d1d5db}
+    .badge{display:inline-block;padding:4px 10px;border-radius:999px;background:rgba(56,189,248,.12);color:var(--accent);font-weight:700;font-size:12px;letter-spacing:.3px;text-transform:uppercase}
+    .list{margin:0;padding-left:18px}
+    .list li{margin:6px 0}
+    .warn{color:var(--warn)}
+    .danger{color:var(--danger)}
+
+    .tips{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:8px}
+    .tip{border:1px solid rgba(255,255,255,.10);background:rgba(255,255,255,.03);padding:10px;border-radius:12px}
+
+    footer{border-top:1px solid rgba(255,255,255,.08);padding:18px 20px;color:var(--muted);font-size:14px}
+    code.inline{background:rgba(148,163,184,.15);padding:2px 6px;border-radius:6px}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="badge">Security Awareness</div>
+      <h1 class="title">Social Engineering: Outsmarting the Human Hack</h1>
+      <p class="subtitle">Understand common tactics, spot the warning signs, and use practical steps to protect yourself and your organization.</p>
+      <div class="cta">
+        #defenseQuick Defense Checklist ↓</a>
+        #examplesReal‑world Examples</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="grid">
+      <article class="card span-6" id="what-is">
+        <h2>What is Social Engineering?</h2>
+        <p>Social engineering is the use of deception and psychological manipulation to trick people into giving away sensitive information, granting access, or making harmful decisions. Instead of attacking technology, attackers target <em>human behavior</em>.</p>
+        <ul class="list">
+          <li><strong>Goal:</strong> Bypass security by exploiting trust, urgency, fear, or curiosity.</li>
+          <li><strong>Targets:</strong> Anyone — employees, students, executives, even IT teams.</li>
+          <li><strong>Channels:</strong> Email, messaging apps, phone calls, social media, in‑person.</li>
+        </ul>
+      </article>
+
+      <article class="card span-6" id="tactics">
+        <h2>Common Tactics</h2>
+        <ul class="list">
+          <li><strong>Phishing:</strong> Fake messages or sites that look real to steal logins or money.</li>
+          <li><strong>Spear Phishing:</strong> Highly tailored messages using details about <em>you</em>.</li>
+          <li><strong>Smishing/Vishing:</strong> SMS or voice calls posing as banks, delivery, or support.</li>
+          <li><strong>Pretexting:</strong> Invented scenarios (e.g., “IT support” asking for codes).</li>
+          <li><strong>Baiting & Quid‑pro‑quo:</strong> Lures (free gifts/USBs) or offers of help in exchange for credentials.</li>
+          <li><strong>Tailgating:</strong> Following someone into a restricted area without a badge.</li>
+        </ul>
+      </article>
+
+      <article class="card span-4" id="signs">
+        <h2>Warning Signs</h2>
+        <ul class="list">
+          <li class="warn">Unusual urgency: “Act now or lose access.”</li>
+          <li>Unexpected attachments or login prompts.</li>
+          <li>Mismatched emails/URLs (hover links to check).</li>
+          <li>Requests for passwords or MFA codes <span class="danger">(never share)</span>.</li>
+          <li>Poor grammar, odd tone, or off‑hours messages from “leaders”.</li>
+        </ul>
+      </article>
+
+      <article class="card span-4" id="defense">
+        <h2>Quick Defense Checklist</h2>
+        <div class="tips">
+          <div class="tip"><strong>Verify out‑of‑band:</strong> If asked to pay/change bank details, call a known number.</div>
+          <div class="tip"><strong>Check the URL:</strong> Type the site yourself; look for <code class="inline">https://</code> and correct domain.</div>
+          <div class="tip"><strong>Use MFA:</strong> Prefer app‑based or hardware keys over SMS when possible.</div>
+          <div class="tip"><strong>Limit oversharing:</strong> Public posts can fuel convincing pretexts.</div>
+          <div class="tip"><strong>Report quickly:</strong> Use your org’s phishing/report button or security email.</div>
+          <div class="tip"><strong>Device hygiene:</strong> Keep OS/Apps updated; use a password manager.</div>
+        </div>
+      </article>
+
+      <article class="card span-4" id="examples">
+        <h2>Real‑world, Safe‑to‑Know Examples</h2>
+        <ul class="list">
+          <li><strong>Fake delivery notice:</strong> SMS claims a package issue → links to a look‑alike site to harvest cards.</li>
+          <li><strong>CEO fraud:</strong> Email appears from a leader requesting urgent gift card purchases.</li>
+          <li><strong>IT support ruse:</strong> Caller says your account is at risk → asks for your MFA code.</li>
+        </ul>
+        <p><em>Remember:</em> Legit teams will never ask for your password or one‑time codes.</p>
+      </article>
+
+      <article class="card span-12" id="playbook">
+        <h2>A 5‑Step Personal Playbook</h2>
+        <ol class="list">
+          <li><strong>Pause:</strong> Take a breath. Urgency is a tool, not a truth.</li>
+          <li><strong>Inspect:</strong> Sender, domain, spelling, tone, and the <em>actual</em> link (hover first).</li>
+          <li><strong>Validate:</strong> Contact the person/company using a number or site you trust.</li>
+          <li><strong>Contain:</strong> If you clicked, disconnect, change passwords, and run AV scans.</li>
+          <li><strong>Report:</strong> Tell your IT/security contact; fast reporting helps everyone.</li>
+        </ol>
+      </article>
+
+      <article class="card span-12" id="resources">
+        <h2>Trusted Learning Resources</h2>
+        <p>Read more from reputable sources:</p>
+        <ul class="list">
+          <li>US CISA – <a href="https://www.cisa.gov/sites/default/files/publicSA_Insights_Social_Engineering.pdfSocial Engineering Insights</a></li>
+          <li>NCSC (UK) – <a href="https://www.ncsc.gov.uk/collection/phishing-scams" target="_blank" rel="noopener        <li>FTC – <a href="https://consumer.ftc.gov/articles/how-avoid-phishing-scams" target="_blank" rel="noopener     </ul>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <span>Made for awareness & education. Stay skeptical, stay safe.</span>
+      <span style="float:right">© 2026</span>
+    </div>
+  </footer>
+</body>
+</html>
